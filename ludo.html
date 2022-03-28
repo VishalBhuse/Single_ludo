@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"></head>
+<style type="text/css">
+	*{
+		margin: 0px;padding: 0px;font-family: 'Permanent Marker', cursive;	}
+	h1{
+		text-shadow: 5px 0px white;font-size: 6rem;margin: 30px;
+	}
+	img{
+		height: 150px;width: 90%;
+	}
+	.dice{
+         display: inline-block;text-align: center;
+	}
+	.container {
+		width: 70%;margin: auto;text-align: center;
+	}
+	p{
+		font-size: 1.5rem;color: #00b894;text-shadow: 1px 1px white;
+	}
+
+</style>
+</head>
+<body style="background-color: #0a3d62;">
+
+         <div class="container ">
+         	<h1 class="text-center text-warning display-4">Ludo game</h1>
+
+         	<div class="dice">
+         		<p >player1</p>
+         		<img src="image/dice1.jpg" id="p1">
+         	</div>
+         	<div class="dice">
+         		<p>player2</p>
+         		<img src="image/dice6.jpg" id="p2">
+         	</div>
+         	<br><br>
+         	<div>
+
+         	<button class="btn btn-danger  p-3" onclick="ludo()">click</button>
+         		
+         	</div>
+         	
+         </div>
+
+         <script type="text/javascript">
+
+         	function ludo (){
+
+         	var pla1 = Math.floor( (Math.random() *6)+1);
+            var dice = 'image/dice'+pla1+'.jpg ';
+            document.getElementById('p1').setAttribute('src',dice);
+
+
+
+         	var pla2 = Math.floor( (Math.random() *6)+1);
+            var dice2 = 'image/dice'+pla2+'.jpg ';
+            document.getElementById('p2').setAttribute('src',dice2);
+
+
+            if (pla1 > pla2) {
+               document.querySelector('h1').innerHTML = 'player 1 is won';
+            } 
+            else if (pla1 < pla2) {
+               document.querySelector('h1').innerHTML = 'player 2 is won';
+            	
+            }
+            else {
+               document.querySelector('h1').innerHTML = 'Drwn match';
+
+            }
+
+         	} 		
+         </script>
+</body>
+</html>
